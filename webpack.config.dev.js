@@ -4,6 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: [
+    'webpack-hot-middleware/client',
     './src/index'
   ],
   output: {
@@ -14,10 +15,13 @@ module.exports = {
   resolve: {
     root: path.resolve('./src/')
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, 'src')
     }]
   }
