@@ -21,8 +21,8 @@ class Bg extends Component {
       zIndex: '-1'
     }
 
-    if ( favorite && teamMap[favorite].bg )
-      style.backgroundImage = `url('${teamMap[favorite].bg}')`
+    if ( favorite && teamMap[favorite.id].bg )
+      style.backgroundImage = `url('${teamMap[favorite.id].bg}')`
 
     return (<div style={style}></div>)
   }

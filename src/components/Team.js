@@ -32,7 +32,7 @@ class Team extends Component {
     style.logo.backgroundPosition = `-${bgPosX}px -${bgPosY}px`
 
     if ( favorite ) {
-      if ( favorite === team_id ) {
+      if ( favorite.id === team_id ) {
         baseStyle.transform = 'scale(1.2)'
         baseStyle.zIndex = '2'
       } else {
@@ -63,8 +63,11 @@ class Team extends Component {
   }
 
   click(id) {
-    const { favorite, dispatch, team_id } = this.props
-    dispatch(teamStore.set(favorite === team_id ? null : id))
+    const { favorite, dispatch, team_id, last_name } = this.props
+    dispatch(teamStore.set(favorite && favorite.id === team_id ? null : {
+      name: last_name,
+      id: team_id
+    }))
   }
 
   mouseOver() {

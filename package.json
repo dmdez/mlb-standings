@@ -53,6 +53,7 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.4.5",
+    "react-simple-dropdown": "^1.1.4",
     "react-simple-pie-chart": "^0.3.1",
     "redux": "^3.5.2",
     "redux-factory": "^3.0.0",

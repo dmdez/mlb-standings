@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import standingsStore from 'store/standings'
 import { connect } from 'react-redux'
+import Favorite from './Favorite'
 
 @connect(mapStateToProps)
 class Header extends Component {
@@ -18,6 +19,9 @@ class Header extends Component {
               <a style={style.button} onClick={() => this.props.dispatch(standingsStore.showRecord())}>W:L</a>
             }
           </div>
+          <div style={{display: 'table-cell', verticalAlign: 'middle', paddingLeft: '5px'}}>
+            <Favorite />
+          </div>
         </div>
       </div>
     )
@@ -25,9 +29,11 @@ class Header extends Component {
 }
 
 function mapStateToProps() {
-  return (state) => ({
-    showRecord: state.standings.showRecord
-  })
+  return (state) => {
+    return {
+      showRecord: state.standings.showRecord
+    }
+  }
 }
 
 const buttonStyle = {

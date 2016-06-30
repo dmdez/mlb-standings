@@ -28,6 +28,5 @@ export default {
   'boston-red-sox'        : { x: 3, y: 0, bg: '/stadiums/boston-red-sox.jpg' },
   'toronto-blue-jays'     : { x: 4, y: 3 },
   'new-york-yankees'      : { x: 1, y: 3 },
-  'tampa-bay-rays'        : { x: 2, y: 4 },
-
+  'tampa-bay-rays'        : { x: 2, y: 4 }
 }
