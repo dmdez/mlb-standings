@@ -1,19 +1,18 @@
 {
-  "name": "react-hot-boilerplate",
+  "name": "mlb-standings",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "React app to showcase latest MLB Standings",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+    "url": "https://github.com/dmdez/mlb-standings.git"
   },
   "keywords": [
     "react",
     "reactjs",
-    "boilerplate",
     "hot",
     "reload",
     "hmr",
@@ -21,12 +20,15 @@
     "edit",
     "webpack"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "engines": {
+    "node": "6.2.0"
+  },
+  "author": "Deric Mendez <dmmendez@gmail.com> (http://github.com/dmdez)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+    "url": "https://github.com/dmdez/mlb-standings/issues"
   },
-  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "homepage": "https://github.com/dmdez/mlb-standings",
   "devDependencies": {
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
