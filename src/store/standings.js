@@ -1,4 +1,5 @@
 import reduxFactory from 'redux-factory'
+import fetch from 'isomorphic-fetch'
 
 const defaultState = {
   results: [],
