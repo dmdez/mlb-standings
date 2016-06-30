@@ -8,10 +8,10 @@ class Header extends Component {
     return (
       <div style={style.base}>
         <div style={{ display: 'table', width: '100%' }}>
-          <div style={{display: 'table-cell', width: '100%'}}>
+          <div style={{display: 'table-cell', width: '100%', verticalAlign: 'middle'}}>
             <div style={style.title}>MLB STANDINGS</div>
           </div>
-          <div style={{display: 'table-cell'}}>
+          <div style={{display: 'table-cell', verticalAlign: 'middle'}}>
             {
               this.props.showRecord ?
               <a style={style.buttonPressed} onClick={() => this.props.dispatch(standingsStore.hideRecord())}>W:L</a> :
@@ -30,6 +30,14 @@ function mapStateToProps() {
   })
 }
 
+const buttonStyle = {
+  display: 'block',
+  padding: '6px 4px',
+  cursor: 'pointer',
+  borderRadius: '2px',
+  boxShadow: 'inset 1px 1px 3px rgba(0, 0, 0, .4)'
+}
+
 const style = {
   base: {
     background: '#fff',
@@ -44,20 +52,14 @@ const style = {
     color: '#333'
   },
   button: {
+    ...buttonStyle,
     background: '#333',
-    color: 'white',
-    display: 'block',
-    padding: '6px 4px',
-    cursor: 'pointer',
-    borderRadius: '2px'
+    color: 'white'
   },
   buttonPressed: {
+    ...buttonStyle,
     background: 'transparent',
-    color: '#333',
-    padding: '6px 4px',
-    cursor: 'pointer',
-    borderRadius: '2px',
-    boxShadow: 'inset 1px 1px 3px rgba(0, 0, 0, .4)'
+    color: '#333'
   }
 }
 

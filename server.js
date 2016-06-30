@@ -5,9 +5,11 @@ var request = require('request');
 var apicache = require('apicache').options({ debug: true }).middleware;
 var standingsRoute = require('./routes/standings');
 
+app.use(express.static('public', { maxAge: '5d' }));
+
 if ( process.env.NODE_ENV != 'production') {
   var webpack = require('webpack');
-  var config = require('./webpack.config.dev');
+  var config = require('./webpack.config');
   var compiler = webpack(config);
   var webpackMiddlewareConfig = {
     noInfo: true,
@@ -17,7 +19,6 @@ if ( process.env.NODE_ENV != 'production') {
   app.use(require("webpack-hot-middleware")(compiler));
 }
 
-app.use(express.static('public', { maxAge: '5d' }));
 app.get('/standings', apicache('1 hour'), require('./routes/standings'));
 app.get('/*', require('./routes/index'));
 app.listen(port, listenAndLog);
