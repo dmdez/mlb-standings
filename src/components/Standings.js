@@ -20,7 +20,7 @@ class Standings extends Component {
 
     return (
       <div style={{ textAlign: 'center' }}>
-        <div style={{ display: 'inline-block', padding: '0 20px' }}>
+        <div style={{ display: 'inline-block', padding: '0 20px 30px' }}>
           <Col><Division conference="NL" division="W" /></Col>
           <Col><Division conference="NL" division="C" /></Col>
           <Col><Division conference="NL" division="E" /></Col>

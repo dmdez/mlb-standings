@@ -54,7 +54,7 @@ const style = {
     fontFamily: 'Chivo',
     fontWeight: '900',
     fontStyle: 'italic',
-    fontSize: '24px',
+    fontSize: '20px',
     color: '#333'
   },
   button: {
