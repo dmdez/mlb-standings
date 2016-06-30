@@ -18,6 +18,7 @@ if ( process.env.NODE_ENV != 'production') {
 }
 
 app.use(express.static('public'));
+app.use(express.static('dist'));
 app.get('/standings', apicache('1 hour'), require('./routes/standings'));
 app.get('/*', require('./routes/index'));
 app.listen(port, listenAndLog);
