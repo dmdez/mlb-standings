@@ -17,8 +17,7 @@ if ( process.env.NODE_ENV != 'production') {
   app.use(require("webpack-hot-middleware")(compiler));
 }
 
-app.use(express.static('public'));
-app.use(express.static('dist'));
+app.use(express.static('public', { maxAge: '5d' }));
 app.get('/standings', apicache('1 hour'), require('./routes/standings'));
 app.get('/*', require('./routes/index'));
 app.listen(port, listenAndLog);
