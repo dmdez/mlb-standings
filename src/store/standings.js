@@ -3,15 +3,12 @@ import fetch from 'isomorphic-fetch'
 
 const defaultState = {
   results: [],
-  loading: false,
-  showRecord: false
+  loading: false
 }
 
 const actions = {
-  loading    : (state)          => ({...state, loading: true }),
-  set        : (state, results) => ({...state, results, loading: false }),
-  showRecord : (state)          => ({...state, showRecord: true }),
-  hideRecord : (state)          => ({...state, showRecord: false})
+  loading : (state)          => ({...state, loading: true }),
+  set     : (state, results) => ({...state, results, loading: false })
 }
 
 const factory = reduxFactory(defaultState, actions, 'standings')

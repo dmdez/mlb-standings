@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import standingsStore from 'store/standings'
+import appStore from 'store/app'
 import { connect } from 'react-redux'
 import Favorite from './Favorite'
 
 @connect(mapStateToProps)
 class Header extends Component {
   render() {
+    const { showRecord, dispatch } = this.props
+
     return (
       <div style={style.base}>
         <div style={{ display: 'table', width: '100%' }}>
@@ -14,9 +16,9 @@ class Header extends Component {
           </div>
           <div style={{display: 'table-cell', verticalAlign: 'middle'}}>
             {
-              this.props.showRecord ?
-              <a style={style.buttonPressed} onClick={() => this.props.dispatch(standingsStore.hideRecord())}>W:L</a> :
-              <a style={style.button} onClick={() => this.props.dispatch(standingsStore.showRecord())}>W:L</a>
+              showRecord ?
+              <a style={style.buttonPressed} onClick={() => dispatch(appStore.hideRecord())}>W:L</a> :
+              <a style={style.button} onClick={() => dispatch(appStore.showRecord())}>W:L</a>
             }
           </div>
           <div style={{display: 'table-cell', verticalAlign: 'middle', paddingLeft: '5px'}}>
@@ -31,7 +33,7 @@ class Header extends Component {
 function mapStateToProps() {
   return (state) => {
     return {
-      showRecord: state.standings.showRecord
+      showRecord: state.app.showRecord
     }
   }
 }

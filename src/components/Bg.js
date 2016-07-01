@@ -34,7 +34,7 @@ class Bg extends Component {
 
   getBgImage(props) {
     const { favorite } = props
-    let bgImage = '/stadiums/generic.jpg'
+    let bgImage = 'http://www.googledrive.com/host/0BzRd-RDS5H-YLS1rZ2RfMkltNTg'
     if ( favorite && teamMap[favorite.id].bg )
       bgImage = teamMap[favorite.id].bg
     return bgImage

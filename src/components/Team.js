@@ -35,8 +35,10 @@ class Team extends Component {
       if ( favorite.id === team_id ) {
         baseStyle.transform = 'scale(1.2)'
         baseStyle.zIndex = '2'
+        baseStyle.boxShadow = '0 0 35px black'
+        baseStyle.borderRadius = '50%'
       } else {
-        baseStyle.opacity = '0.5'
+        baseStyle.opacity = '0.7'
       }
     }
 
@@ -47,11 +49,11 @@ class Team extends Component {
         onMouseOut={this.mouseOut}
         onClick={() => this.click(team_id)}
       >
-        <div style={{ ...style.logo, zIndex: this.shouldShowStats() ? '1' : '2' }}></div>
-        <div style={{ ...style.record, zIndex: this.shouldShowStats() ? '3': '0' }}>
-          <span style={{color: '#333', fontWeight: 'bold'}}>{ won }</span> <span style={{color: '#999'}}>{ lost }</span>
+        <div style={{ ...style.logo }}></div>
+        <div style={{ ...style.record, display: this.shouldShowStats() ? '': 'none' }}>
+          <span style={{color: '#333', fontWeight: 'bold'}}>{ won }</span>:<span style={{color: '#999'}}>{ lost }</span>
         </div>
-        <div style={{ ...style.pie,  zIndex: this.shouldShowStats() ? '2' : '1' }}>
+        <div style={{ ...style.pie }}>
           <PieChart slices={pieSlices} />
         </div>
       </div>
@@ -59,7 +61,9 @@ class Team extends Component {
   }
 
   shouldShowStats() {
-    return this.state.over || this.props.showRecord
+    const { favorite, team_id, showRecord } = this.props
+
+    return favorite && favorite.id === team_id || showRecord
   }
 
   click(id) {
@@ -71,11 +75,11 @@ class Team extends Component {
   }
 
   mouseOver() {
-    this.setState({ over: true })
+    //this.setState({ over: true })
   }
 
   mouseOut() {
-    this.setState({ over: false })
+    //this.setState({ over: false })
   }
 }
 
@@ -108,25 +112,24 @@ let style = {
   },
   record: {
     position: 'absolute',
-    width: '40px',
-    height: '28px',
-    paddingTop: '12px',
-    borderRadius: '50%',
+    borderRadius: '3px',
     background: 'white',
     zIndex: '3',
     fontSize: '12px',
     textAlign: 'center',
-    top: '50%',
+    bottom: '0',
     left: '50%',
-    margin: '-22px 0 0 -23px',
-    transition: 'all 0.3s'
+    transition: 'all 0.3s',
+    border: '1px solid #333',
+    padding: '1px 2px',
+    transform: 'translateX(-50%)'
   }
 }
 
 
 function mapStateToProps() {
   return (state) => ({
-    showRecord: state.standings.showRecord,
+    showRecord: state.app.showRecord,
     favorite: state.team.favorite
   })
 }
