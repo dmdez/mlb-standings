@@ -8,7 +8,20 @@ import store from 'store'
 class App extends Component {
 
   componentWillMount() {
-    store.dispatch(standingsStore.load())
+    this.loadStandings()
+    this.standingsTimer()
+  }
+
+  standingsTimer() {
+    setTimeout(() => {
+      return this.loadStandings().then(() => {
+        this.standingsTimer()
+      })
+    }, 1000 * 60 * 60) // 1 hour
+  }
+
+  loadStandings() {
+    return store.dispatch(standingsStore.load())
   }
 
   render() {

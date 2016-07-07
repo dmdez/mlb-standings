@@ -9,14 +9,14 @@ function Header({ showRecord, dispatch, onClick }) {
         <div style={style.col.title}>
           <div style={style.title}>MLB STANDINGS</div>
         </div>
+        <div style={style.col.favorite}>
+          <Favorite />
+        </div>
         <div style={style.col.actions}>
           <a
             style={style[showRecord ? 'buttonPressed' : 'button']}
             onClick={onClick}
           >W:L</a>
-        </div>
-        <div style={style.col.favorite}>
-          <Favorite />
         </div>
       </div>
     </div>

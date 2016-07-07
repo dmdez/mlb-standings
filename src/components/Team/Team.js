@@ -23,7 +23,8 @@ function Team(props) {
       baseStyle.boxShadow = '0 0 35px black'
       baseStyle.borderRadius = '50%'
     } else {
-      baseStyle.opacity = '0.7'
+      baseStyle.opacity = '0.6'
+      baseStyle.transform = 'scale(.7)'
     }
   }
 

@@ -1,5 +1,5 @@
 const buttonStyle = {
-  display: 'block',
+  display: 'inline-block',
   padding: '6px 4px',
   cursor: 'pointer',
   borderRadius: '2px',
@@ -14,8 +14,8 @@ export default {
   },
   container: { display: 'table', width: '100%' },
   col: {
-    title: {display: 'table-cell', width: '100%', verticalAlign: 'middle'},
-    actions: {display: 'table-cell', verticalAlign: 'middle'},
+    title: {display: 'table-cell', width: '50%', verticalAlign: 'middle'},
+    actions: {display: 'table-cell', width: '50%', textAlign: 'right', verticalAlign: 'middle'},
     favorite: {display: 'table-cell', verticalAlign: 'middle', paddingLeft: '5px'}
   },
   title: {
@@ -23,12 +23,13 @@ export default {
     fontWeight: '900',
     fontStyle: 'italic',
     fontSize: '20px',
-    color: '#333'
+    color: '#333',
+    textAlign: 'center'
   },
   button: {
     ...buttonStyle,
     background: '#333',
-    color: 'white'
+    color: 'white',
   },
   buttonPressed: {
     ...buttonStyle,
