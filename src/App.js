@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Standings from 'components/Standings'
 import Header from 'components/Header'
+import NoFavorite from 'components/NoFavorite'
 import Bg from 'components/Bg'
 import standingsStore from 'store/standings'
 import store from 'store'
@@ -40,8 +41,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-
-
+        <NoFavorite />
       </div>
     );
   }

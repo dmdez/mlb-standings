@@ -12,4 +12,7 @@ const reducers = combineReducers({
   app: appStore.reducer
 })
 
-export default compose(applyMiddleware(thunk), persistState(['team', 'app']))(createStore)(reducers)
+export default compose(
+  applyMiddleware(thunk),
+  persistState(['team', 'app'])
+)(createStore)(reducers)

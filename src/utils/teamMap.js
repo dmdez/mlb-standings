@@ -1,8 +1,8 @@
 export default {
   'san-francisco-giants'  : { x: 3, y: 5, bg: 'http://www.googledrive.com/host/0BzRd-RDS5H-YNzhhSVN3RGVzYWM' },
-  'los-angeles-dodgers'   : { x: 4, y: 1 },
-  'colorado-rockies'      : { x: 0, y: 4 },
-  'arizona-diamondbacks'  : { x: 1, y: 0 },
+  'los-angeles-dodgers'   : { x: 4, y: 1, bg: 'http://www.googledrive.com/host/0BzRd-RDS5H-YbUVUVkJaT0c3bXc' },
+  'colorado-rockies'      : { x: 0, y: 4, bg: 'http://www.googledrive.com/host/0BzRd-RDS5H-YWUk2RWJ1TWtmUVk' },
+  'arizona-diamondbacks'  : { x: 1, y: 0, bg: 'http://www.googledrive.com/host/0BzRd-RDS5H-YbTQxVGdqWEh6ejQ' },
   'san-diego-padres'      : { x: 2, y: 5 },
   'chicago-cubs'          : { x: 0, y: 1, bg: 'http://www.googledrive.com/host/0BzRd-RDS5H-YSVUtOXhSNjVMclk' },
   'st-louis-cardinals'    : { x: 4, y: 0 },

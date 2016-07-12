@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Favorite from 'components/Favorite'
 import style from './style'
+import Button from 'components/Button'
 
 function Header({ showRecord, dispatch, onClick }) {
   return (
@@ -13,10 +14,7 @@ function Header({ showRecord, dispatch, onClick }) {
           <Favorite />
         </div>
         <div style={style.col.actions}>
-          <a
-            style={style[showRecord ? 'buttonPressed' : 'button']}
-            onClick={onClick}
-          >W:L</a>
+          <Button onClick={onClick} active={showRecord}>W:L</Button>
         </div>
       </div>
     </div>
