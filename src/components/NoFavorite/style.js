@@ -16,7 +16,8 @@ export default {
   col: {
     display: 'table-cell',
     verticalAlign: 'middle',
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: '10px'
   },
 
   content: {
@@ -24,7 +25,8 @@ export default {
     display: 'inline-block',
     padding: '20px',
     borderRadius: '3px',
-    boxShadow: '0 0 20px rgba(0, 0, 0, .8)'
+    boxShadow: '0 0 20px rgba(0, 0, 0, .8)',
+    maxWidth: '400px'
   }
-  
+
 }
